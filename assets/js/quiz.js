@@ -16,7 +16,7 @@ var saveScores = document.getElementById("saveScores")
 var secondsLeft = 0;
 var score = 0;
 var currentQuestion = 0;
-var coundownTimer;
+var countdownTimer;
 
 function stopGame() {
     clearInterval(countdownTimer);

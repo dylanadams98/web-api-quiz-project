@@ -3,8 +3,6 @@ var backtoQuiz = document.getElementById("backtoquiz")
 
 function onBackToQuiz(){
     window.location.href = 'index.html'
-
-
 }
 var savedScores = JSON.parse(localStorage.getItem("savedScores"))
 
