@@ -1,5 +1,5 @@
-var scoresheet = document.getElementById("scoresheet")
-var backtoQuiz = document.getElementById("backtoquiz")
+var scoreSheet = document.getElementById("scoresheet")
+var backToQuiz = document.getElementById("backtoquiz")
 
 function onBackToQuiz(){
     window.location.href = 'index.html'
@@ -17,8 +17,8 @@ for (var i = 0; i < savedScores.length; i++) {
     result.innerHTML = `<div class="score-item">${initials}</div>
     <div class="score-item">${score}</div>`
 
-    scoresheet.appendChild(result);
+    scoreSheet.appendChild(result);
 
 }
 
-backtoQuiz.addEventListener("click", onBackToQuiz);
+backToQuiz.addEventListener("click", onBackToQuiz);
