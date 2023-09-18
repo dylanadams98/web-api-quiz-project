@@ -18,6 +18,32 @@ var score = 0;
 var currentQuestion = 0;
 var countdownTimer;
 
+function onStartGame() {
+    secondsLeft = 75;
+
+    currentQuestion = 0;
+
+    score = 0;
+
+    countdownTimer = setInterval(function () {
+
+        if (secondsLeft > 0) {
+            timer.textContent = secondsLeft;
+        } else {
+
+            stopGame();
+        }
+        secondsLeft--;
+
+    }, 1000);
+
+    welcome.style.display = 'none';
+    result.style.display = 'none';
+    quiz.style.display = 'flex';
+
+    displayQuestion();
+}
+
 function stopGame() {
     clearInterval(countdownTimer);
 
@@ -103,31 +129,7 @@ function displayQuestion() {
     }
 }
 
-function onStartGame() {
-    secondsLeft = 75;
 
-    currentQuestion = 0;
-
-    score = 0;
-
-    countdownTimer = setInterval(function () {
-
-        if (secondsLeft > 0) {
-            timer.textContent = secondsLeft;
-        } else {
-
-            stopGame();
-        }
-        secondsLeft--;
-
-    }, 1000);
-
-    welcome.style.display = 'none';
-    result.style.display = 'none';
-    quiz.style.display = 'flex';
-
-    displayQuestion();
-}
 
 
 startQuiz.addEventListener("click", onStartGame);
