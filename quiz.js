@@ -58,19 +58,19 @@ function stopGame() {
 }
 
 function onSaveScore(e) {
-    var savedScores = JSON.parse(localStorage.getItem("savedScores"))
+    var savedScores = JSON.parse(localStorage.getItem("savedScores")) || [];
+    console.log(savedScores)
     var initials = document.getElementById("initials").value
     var newScore = {
         initials,
         score
     }
-    savedScores.push(newScore)
 
-    if (initials !== "") {
-        localStorage.setItem("savedScores", JSON.stringify(savedScores));
+    if (initials !== "") {savedScores.push(newScore)
+    }
+    localStorage.setItem("savedScores", JSON.stringify(savedScores));
 
         document.getElementById("initials").value = "";
-    }
 }
 
 function onViewScores(e) {
@@ -128,8 +128,6 @@ function displayQuestion() {
         options.appendChild(option);
     }
 }
-
-
 
 
 startQuiz.addEventListener("click", onStartGame);

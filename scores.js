@@ -4,8 +4,9 @@ var backToQuiz = document.getElementById("backtoquiz")
 function onBackToQuiz(){
     window.location.href = 'index.html'
 }
-var savedScores = JSON.parse(localStorage.getItem("savedScores"))
 
+var savedScores = JSON.parse(localStorage.getItem("savedScores"))
+console.log(savedScores)
 for (var i = 0; i < savedScores.length; i++) {
 
     var initials = savedScores[i].initials;
